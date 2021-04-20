@@ -1,7 +1,22 @@
-<div class="container text-center">
-  <h1>{{ title }}</h1>
+<div class="page-container">
+  <div class="container text-center">
+    <h1>{{ title }}</h1>
+  </div>
+
+  <div class="app-container">
+    <button class="create" id="create" (click)="create()">Create</button>
+      <app-super-counter 
+        class="super-counter" 
+        *ngFor="let supercounter of supercounters">
+      </app-super-counter>
+
+      <app-counter 
+        class="counter" 
+        *ngFor="let counter of counters" 
+        [value] = "valueArray[counters.length]">
+      </app-counter>
+    
+  </div>
 </div>
 
-<div>
-  <button class="create" id="create" (click)="create()">Create</button>
-</div>
+
