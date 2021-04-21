@@ -11,6 +11,8 @@ export class CounterComponent implements OnInit {
   @Input() counter : Counter;
 
   constructor() {
+    if (!this.counter)
+      this.counter = new Counter();
   }
 
   title : string="Counter";

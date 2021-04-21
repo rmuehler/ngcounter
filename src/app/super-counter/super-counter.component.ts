@@ -11,6 +11,8 @@ export class SuperCounterComponent implements OnInit {
   @Input() supercounter: SuperCounter;
   
   constructor() {
+    if (!this.supercounter)
+      this.supercounter = new SuperCounter(0);
   }
 
   title : string ="Super Counter";
