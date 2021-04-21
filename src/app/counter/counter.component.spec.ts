@@ -19,26 +19,27 @@ describe('CounterComponent', () => {
   });
 
   it('Ability to increment value of a counter', () => {
-    //const fixture = TestBed.createComponent(CounterComponent);
+    // const fixture = TestBed.createComponent(CounterComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    let increment = compiled.querySelector('#incrementButton');
+    const increment = compiled.querySelector('#incrementButton');
     increment.click();
     expect(component.counter.value).toEqual(1);
   });
 
   it('Render a value of a counter in view', () => {
+    // tslint:disable-next-line:no-shadowed-variable
     const fixture = TestBed.createComponent(CounterComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    let value = compiled.querySelector('#countDisplay');
-    expect(value.innerHTML).toEqual("0");
+    const value = compiled.querySelector('#countDisplay');
+    expect(value.innerHTML).toEqual('0');
   });
 
   it('Cannot decrement value if it is 0', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    let decrement = compiled.querySelector('#decrementButton');
+    const decrement = compiled.querySelector('#decrementButton');
     decrement.click();
     expect(component.counter.value).toEqual(0);
   });

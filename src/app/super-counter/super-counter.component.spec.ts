@@ -21,7 +21,7 @@ describe('SuperCounterComponent', () => {
   it('When the + button is clicked super counter increments by 3', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    let increment = compiled.querySelector('.incrementButton');
+    const increment = compiled.querySelector('.incrementButton');
     increment.click();
     expect(component.supercounter.value).toEqual(3);
   });
@@ -29,8 +29,8 @@ describe('SuperCounterComponent', () => {
   it('When the - button is clicked super counter decrements by 3', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    let increment = compiled.querySelector('.incrementButton');
-    let decrement = compiled.querySelector('.decrementButton');
+    const increment = compiled.querySelector('.incrementButton');
+    const decrement = compiled.querySelector('.decrementButton');
     increment.click();
     increment.click();
     decrement.click();
@@ -40,7 +40,7 @@ describe('SuperCounterComponent', () => {
   it('When the - button is clicked at 0, does not decrement', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    let decrement = compiled.querySelector('.decrementButton');
+    const decrement = compiled.querySelector('.decrementButton');
     decrement.click();
     expect(component.supercounter.value).toEqual(0);
   });

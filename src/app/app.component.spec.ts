@@ -37,11 +37,11 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    let buttonText = compiled.querySelector('#create')
-    expect(buttonText.innerHTML).toEqual("Create");
+    const buttonText = compiled.querySelector('#create')
+    expect(buttonText.innerHTML).toEqual('Create');
   });
-  
-  //TODO: click the button?
+
+  // TODO: click the button?
   it('the create button pushing counter to an array', () => {
     component.create();
     component.create();
