@@ -11,7 +11,6 @@ describe('AppComponent', () => {
         AppComponent
       ],
     }).compileComponents();
-    
     component = new AppComponent();
   }));
 
@@ -50,54 +49,43 @@ describe('AppComponent', () => {
   });
 
   /*******************Super Counter Tests********************************/
-  
-  // it('Super counter will render into view when counter > 5', () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   fixture.detectChanges();
-  //   let compiled = fixture.nativeElement;
-  //   component.create();
-  //   component.create();
-  //   component.create();
-  //   component.create();
-  //   component.create();
-  //   component.create();
-  //   let superCounter = compiled.querySelector('super-counter');
-  //   expect(component.supercounters[0]).toEqual(superCounter);
-    
-  // });
 
-  // it('Super counter component will be created', () => {
-  //   component.create();
-  //   component.create();
-  //   component.create();
-  //   component.create();
-  //   component.create();
-  //   component.create();
-  //   expect(component.supercounters[0]).toBeDefined();
-  // });
+  it('Super counter will render into view when counter > 5', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    component.create();
+    component.create();
+    component.create();
+    component.create();
+    component.create();
+    component.create();
+    fixture.detectChanges();
+    expect(component.supercounters.length).toEqual(1);
+  });
 
-  // it('Super counter will have a starting value of the SUM of counters', () => {
-  //   component.create();
-  //   component.create();
-  //   component.create();
-  //   component.create();
-  //   component.create();
-  //   component.create();
-  //   component.counters[0].value = 3;
-  //   component.counters[3].value = 5;
-  //   component.counters[2].value = 2;
-  //   expect(component.supercounters[0]).toEqual(10);
-  // });
+  it('Super counter will have a starting value of the SUM of counters', () => {
+    component.create();
+    component.create();
+    component.create();
+    component.create();
+    component.create();
+    component.counters[0].value += 5;
+    component.counters[1].value += 3;
+    component.counters[2].value += 7;
+    component.create();
+    expect(component.supercounters[0].value).toEqual(15);
+  });
 
-  // it('5 Counters are removed from display when super counter appears', () => {
-  //   component.create();
-  //   component.create();
-  //   component.create();
-  //   component.create();
-  //   component.create();
-  //   component.create();
-  //   expect(component.counters.length).toEqual(0);
-  // });
+  it('5 Counters are removed from display when super counter appears', () => {
+    component.create();
+    component.create();
+    component.create();
+    component.create();
+    component.create();
+    expect(component.counters.length).toEqual(5);
+    component.create();
+    expect(component.counters.length).toEqual(0);
+  });
 
   // it('Super Counter is rendered as double the size of counter', () => {
   //   const fixture = TestBed.createComponent(AppComponent);
@@ -110,18 +98,11 @@ describe('AppComponent', () => {
   //   component.create();
   //   component.create();
   //   component.create();
+  //   let width = document.querySelector(".counter-container").getAttribute("width");
+  //   console.log(width);
+
   //   let counter = compiled.querySelector('counter');
   //   let superCounter = compiled.querySelector('super-counter');
-  //   expect(superCounter.width).toBeGreaterThan(counter.width)
-  // });
-
-  // it('Super Counter is not able to decrement below 0', () => {
-  //   component.create();
-  //   component.create();
-  //   component.create();
-  //   component.create();
-  //   component.create();
-  //   component.create();
-  //   expect(component.supercounters[0].decrement()).toEqual(0);
+  //   expect(superCounter.width).toBeGreaterThan(counter.width);
   // });
 });

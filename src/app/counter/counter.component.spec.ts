@@ -23,7 +23,6 @@ describe('CounterComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
     let increment = compiled.querySelector('#incrementButton');
-    console.log(increment);
     increment.click();
     expect(component.counter.value).toEqual(1);
   });
@@ -40,7 +39,6 @@ describe('CounterComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
     let decrement = compiled.querySelector('#decrementButton');
-    console.log(decrement);
     decrement.click();
     expect(component.counter.value).toEqual(0);
   });

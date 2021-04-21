@@ -22,7 +22,6 @@ describe('SuperCounterComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
     let increment = compiled.querySelector('.incrementButton');
-    console.log(increment);
     increment.click();
     expect(component.supercounter.value).toEqual(3);
   });
@@ -32,7 +31,6 @@ describe('SuperCounterComponent', () => {
     const compiled = fixture.nativeElement;
     let increment = compiled.querySelector('.incrementButton');
     let decrement = compiled.querySelector('.decrementButton');
-    console.log(decrement);
     increment.click();
     increment.click();
     decrement.click();
@@ -43,7 +41,6 @@ describe('SuperCounterComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
     let decrement = compiled.querySelector('.decrementButton');
-    console.log(decrement);
     decrement.click();
     expect(component.supercounter.value).toEqual(0);
   });

@@ -22,7 +22,7 @@ export class SuperCounterComponent implements OnInit {
 
   increment(){
     this.supercounter.value+= 3;
-    console.log("Value from supercounter.component.ts: " + this.supercounter.value);
+    // console.log("Value from supercounter.component.ts: " + this.supercounter.value);
   }
 
   decrement(){

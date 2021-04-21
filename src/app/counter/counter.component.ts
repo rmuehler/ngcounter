@@ -22,7 +22,7 @@ export class CounterComponent implements OnInit {
 
   increment(){
     this.counter.value++;
-    console.log("Value from counter.component.ts: " + this.counter.value);
+    // console.log("Value from counter.component.ts: " + this.counter.value);
   }
 
   decrement(){
