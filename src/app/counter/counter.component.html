@@ -1,7 +1,6 @@
 <div class="counter-container">
   <h2>{{title}}</h2>
-  <h1 id='countDisplay' [innerHTML]="value"></h1>
-  <button class="decrementButton" (click)="decrement()">-</button>
-  <button class="incrementButton" (click)="increment()">+</button>
-  
+  <h1 id='countDisplay' [innerHTML]="counter.value"></h1>
+  <button id="decrementButton" (click)="decrement()">-</button>
+  <button id="incrementButton" (click)="increment()">+</button>
 </div>

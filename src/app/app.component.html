@@ -7,13 +7,14 @@
     <button class="create" id="create" (click)="create()">Create</button>
       <app-super-counter 
         class="super-counter" 
-        *ngFor="let supercounter of supercounters">
+        *ngFor="let supercounter of supercounters"
+        [supercounter] = "supercounter">
       </app-super-counter>
 
       <app-counter 
         class="counter" 
-        *ngFor="let counter of counters" 
-        [value] = "valueArray[counters.length]">
+        *ngFor="let counter of counters"
+        [counter] = "counter">
       </app-counter>
     
   </div>
